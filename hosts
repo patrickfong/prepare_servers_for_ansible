@@ -1,0 +1,27 @@
+# This is the default ansible 'hosts' file.
+#
+# It should live in /etc/ansible/hosts
+#
+#   - Comments begin with the '#' character
+#   - Blank lines are ignored
+#   - Groups of hosts are delimited by [header] elements
+#   - You can enter hostnames or ip addresses
+#   - A hostname/ip can be a member of multiple groups
+
+# Ex 3: A collection of database servers in the 'dbservers' group
+
+[forgeRockServers]
+openamtstc1
+openamtstc2
+openamtstw1
+openamtstw2
+opendjtstc1
+opendjtstw1
+openidmtstc1
+openidmtstw1
+openigtstc1
+openigtstw1
+
+[forgeRockServers:vars]
+ansible_user=root
+

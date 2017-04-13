@@ -1,0 +1,5 @@
+nulli ALL = NOPASSWD: ALL
+
+# User rules for nulli
+nulli ALL=(ALL) NOPASSWD:ALL
+
