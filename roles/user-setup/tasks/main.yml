@@ -1,7 +1,7 @@
 ---
 # tasks file for user_setup
 - include: add-and-config-nulli-user.yml
-  when: false
+  when: true
 
 - include: remove-ssh-key-from-root-user.yml
   when: true
