@@ -1,21 +1,21 @@
 ---
 - name: Define sudoer group name for RedHat family of OSes
-set_fact:
-  sudoer_group: wheel
-when: ansible_os_family == "RedHat"
+  set_fact:
+    sudoer_group: wheel
+  when: ansible_os_family == "RedHat"
 
 - name: Determine sudoer group name for Debian family of OSes
-set_fact:
-  sudoer_group: sudoer
-when: ansible_os_family == "Debian"
+  set_fact:
+    sudoer_group: sudoer
+  when: ansible_os_family == "Debian"
 
 - debug: msg="Using group name {{ sudoer_group }}" 
 
 - name: Creating users "{{ uusername }}" with sudoer access 
-user: name={{ uusername }} password={{ upassword | password_hash('sha512') }} groups={{ sudoer_group }} append=yes
+  user: name={{ uusername }} password={{ upassword | password_hash('sha512') }} groups={{ sudoer_group }} append=yes
 
 - name: Copy sudoer.d configuration  
-copy:
-  src: "nulli"
-  dest: "/etc/sudoers.d/"
-  validate: 'visudo -cf %s'
+  copy:
+    src: "nulli"
+    dest: "/etc/sudoers.d/"
+    validate: 'visudo -cf %s'
