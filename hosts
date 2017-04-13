@@ -10,6 +10,12 @@
 
 # Ex 3: A collection of database servers in the 'dbservers' group
 
+[awsServers]
+34.208.78.157
+
+[awsServers:vars]
+ansible_user=ec2-user
+
 [forgeRockServers]
 openamtstc1
 openamtstc2
