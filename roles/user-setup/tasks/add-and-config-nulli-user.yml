@@ -19,3 +19,10 @@
     src: "nulli"
     dest: "/etc/sudoers.d/"
     validate: 'visudo -cf %s'
+
+- name: Add ssh key from root user profile
+  authorized_key:
+    user: nulli
+    state: present
+    manage_dir: yes
+    key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"

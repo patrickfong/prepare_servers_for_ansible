@@ -1,7 +1,7 @@
 ---
 - name: Create nulli user as a sudoer
   become: yes
-  hosts: awsServers
+  hosts: forgeRockServers 
   
   roles:
   - user-setup
